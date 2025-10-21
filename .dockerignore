@@ -1,0 +1,19 @@
+
+# /dist
+# /node_modules
+
+node_modules
+.git
+dist
+.angular
+e2e
+coverage
+test
+*.log
+.DS_Store
+.vscode
+cypress
+*.md
+*.sqlite
+*.tar.gz
+*.zip
