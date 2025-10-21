@@ -1,0 +1,9 @@
+services:
+  festival:
+      container_name: festival
+      build:
+        context: ./
+        dockerfile: Dockerfile
+      ports:
+        - "5002:80"
+
