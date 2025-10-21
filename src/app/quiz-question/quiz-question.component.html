@@ -9,7 +9,7 @@
   <div class="w-2/3 mx-auto">
     <ng-container *ngFor="let item of questionView?.answers">
       <button class="w-full text-center text-xl p-4 rounded-xl bg-white mt-4" (click)="showAnswer(item)"
-        [ngClass]="{'text-white bg-[#008000]':isClicked && item?.id==correctAnswer?.id,'bg-[#F00] text-white':isClicked && item?.id!=correctAnswer?.id && item?.id==failQuestion.id }">
+        [ngClass]="{'text-white !bg-[#008000]':isClicked && item?.id==correctAnswer?.id,'!bg-[#F00] text-white':isClicked && item?.id!=correctAnswer?.id && item?.id==failQuestion.id }">
         {{item?.text}}
       </button>
     </ng-container>
