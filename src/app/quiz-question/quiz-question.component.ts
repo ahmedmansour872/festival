@@ -14,7 +14,7 @@ export class QuizQuestionComponent {
   questionView: any;
   isClicked: boolean = false
   correctAnswer: any
-
+  numberOfQuestions: number = 0;
   data: any[] = [
     {
       "id": 1,
@@ -362,13 +362,15 @@ export class QuizQuestionComponent {
         this.router.navigateByUrl('/result')
       } else
         this.calcRandomNumber()
-    }, 1000);
-  }
+      }, 1000);
+    }
 
-  calcRandomNumber() {
-    const randomNumber = Math.floor(Math.random() * this.data.length);
-    this.questionView = this.data[randomNumber];
-    this.correctAnswer = this.questionView?.answers?.find((ele: any) => ele?.isCorrect)
+    calcRandomNumber() {
+      const randomNumber = Math.floor(Math.random() * this.data.length);
+      this.questionView = this.data[randomNumber];
+      this.correctAnswer = this.questionView?.answers?.find((ele: any) => ele?.isCorrect)
+      ++this.numberOfQuestions
+      localStorage.setItem('numberOfQuestions', this.numberOfQuestions.toString())
     this.data.splice(randomNumber, 1);
   }
 }
