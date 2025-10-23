@@ -14,10 +14,11 @@ export class ResultComponent {
     let numberOfQuestions = localStorage.getItem('numberOfQuestions')
     if (scoreGame) this.score = +scoreGame
     if (numberOfQuestions) this.numberOfQuestions = +numberOfQuestions
-    setTimeout(() => {
-      router.navigateByUrl('/home')
+    let clcear = setTimeout(() => {
       localStorage.removeItem("score")
       localStorage.removeItem("numberOfQuestions")
+      clearTimeout(clcear)
+      router.navigateByUrl('/home')
     }, 5000);
   }
 }
