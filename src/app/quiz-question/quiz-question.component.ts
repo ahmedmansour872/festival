@@ -346,6 +346,8 @@ export class QuizQuestionComponent {
   }
 
   showAnswer(item: any) {
+    if (this.isClicked) return;
+
     this.isClicked = true
     this.failQuestion = item
     if (item?.isCorrect == this.correctAnswer.isCorrect) {
